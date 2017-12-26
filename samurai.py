@@ -4,51 +4,10 @@ import gettext, gettext_windows
 gettext_windows.setup_env()
 gettext.install('shared','./locale')
 
+import sys
 import urllib.request
 import bs4 as bs
 import shared as sh
-
-
-class Get:
-    
-    def __init__(self,url):
-        self._url     = url
-        self._timeout = 6
-        self._html    = ''
-        
-    def _get(self):
-        try:
-            self._html = urllib.request.urlopen (url     = self._url
-                                                ,data    = None
-                                                ,timeout = self._timeout
-                                                ).read()
-            sh.log.append ('Get._get'
-                          ,_('INFO')
-                          ,_('[OK]: "%s"') % self._url
-                          )
-        # Too many possible exceptions
-        except:
-            sh.log.append ('Get._get'
-                          ,_('WARNING')
-                          ,_('[FAILED]: "%s"') % self._url
-                          )
-    
-    def run(self):
-        if self._url:
-            # Safely use URL as a string
-            if isinstance(self._url,str):
-                self._get()
-            else:
-                sh.log.append ('Get.run'
-                              ,_('WARNING')
-                              ,_('Wrong input data!')
-                              )
-        else:
-            sh.log.append ('Get.run'
-                          ,_('WARNING')
-                          ,_('Empty input is not allowed!')
-                          )
-
 
 
 class Parse:
@@ -109,15 +68,21 @@ class Browse:
 
 
 if __name__ == '__main__':
-    timer = sh.Timer()
-    timer.start()
-    #url = 'https://youtube.com'
-    #url = 'https://en.wikipedia.org/wiki/Bushido'
-    url = 'https://habrahabr.ru/post/208390/'
-    get = Get(url=url)
-    get.run()
-    parse = Parse(code=get._html)
-    text  = parse.run()
-    timer.end()
-    browse = Browse(text=text)
-    browse.run()
+    if sys.argv and len(sys.argv) > 1:
+        timer = sh.Timer()
+        timer.start()
+        #url = 'https://youtube.com'
+        #url = 'https://en.wikipedia.org/wiki/Bushido'
+        get = sh.Get(url=sys.argv[1])
+        get.run()
+        parse = Parse(code=get._html)
+        text  = parse.run()
+        timer.end()
+        browse = Browse(text=text)
+        browse.run()
+    # todo: do not warn when console UI is ready
+    else:
+        sh.log.append ('samurai'
+                      ,_('INFO')
+                      ,_('Please provide a URL as a command-line argument!')
+                      )
