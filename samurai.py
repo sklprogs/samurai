@@ -13,13 +13,18 @@ import shared as sh
 
 class Parse:
     
-    def __init__(self,code):
-        self._text = ''
+    def __init__(self,text):
+        self._text = text
         self._tab  = ' ' * 4
-        self._code = code
         self._width, self._height = sl.get_terminal_size()
-        self._width =- 4 + len(self._tab)
+        sh.log.append ('Parse.__init__'
+                      ,_('INFO')
+                      ,_('Terminal size: %d columns, %d lines') \
+                      % (self._width,self._height)
+                      )
+        self._width -= 4 + len(self._tab)
         if self._width <= 0:
+            print(self._width) # todo: del
             sh.log.append ('Parse.__init__'
                           ,_('WARNING')
                           ,_('Wrong input data!')
@@ -70,21 +75,24 @@ class Parse:
                           ,_('Empty input is not allowed!')
                           )
     
-    def run(self):
-        if self._code:
-            self.soup = bs.BeautifulSoup(self._code,'html.parser')
-            for script in self.soup.find_all('script'): #,src=False
-                script.decompose()
-            self._text = self.soup.get_text()
-            self.pretty()
-            self.wrap()
-            return self._text
+    def delete_tags(self):
+        if self._text:
+            try:
+                self.soup = bs.BeautifulSoup(self._text,'html.parser')
+                for script in self.soup.find_all('script'): #,src=False
+                    script.decompose()
+                self._text = self.soup.get_text()
+            except:
+                sh.log.append ('Parse.delete_tags'
+                              ,_('WARNING')
+                              ,_('Failed to parse the page!')
+                              )
         else:
-            sh.log.append ('Parse.run'
+            sh.log.append ('Parse.delete_tags'
                           ,_('WARNING')
                           ,_('Empty input is not allowed!')
                           )
-
+    
 
 class Browse:
     
@@ -105,14 +113,20 @@ if __name__ == '__main__':
     if sys.argv and len(sys.argv) > 1:
         timer = sh.Timer()
         timer.start()
-        #url = 'https://youtube.com'
-        #url = 'https://en.wikipedia.org/wiki/Bushido'
-        get = sh.Get(url=sys.argv[1])
-        get.run()
-        parse = Parse(code=get._html)
-        text  = parse.run()
+        if sys.argv[1].startswith('http'):
+            #url = 'https://youtube.com'
+            #url = 'https://en.wikipedia.org/wiki/Bushido'
+            get = sh.Get(url=sys.argv[1])
+            get.run()
+            parse = Parse(text=get._html)
+            parse.delete_tags()
+        else:
+            text = sh.ReadTextFile(file=sys.argv[1]).get()
+            parse = Parse(text=text)
+        parse.pretty()
+        parse.wrap()
         timer.end()
-        browse = Browse(text=text)
+        browse = Browse(text=parse._text)
         browse.run()
     # todo: do not warn when console UI is ready
     else:
