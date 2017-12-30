@@ -14,15 +14,16 @@ import shared as sh
 class Parse:
     
     def __init__(self,text):
-        self._text = text
-        self._tab  = ' ' * 4
+        self._breaks = []
+        self._tab    = ' ' * 4
+        self._text   = text
         self._width, self._height = sl.get_terminal_size()
         sh.log.append ('Parse.__init__'
                       ,_('INFO')
                       ,_('Terminal size: %d columns, %d lines') \
                       % (self._width,self._height)
                       )
-        self._width -= 4 + len(self._tab)
+        self._width -= 2 + len(self._tab)
         if self._width <= 0:
             print(self._width) # todo: del
             sh.log.append ('Parse.__init__'
@@ -65,6 +66,7 @@ class Parse:
                     count = -1
                 if count == self._width:
                     lst[space_i] = '\n'
+                    self._breaks.append(space_i)
                     count = i - space_i
                 i += 1
                 count += 1
@@ -92,7 +94,19 @@ class Parse:
                           ,_('WARNING')
                           ,_('Empty input is not allowed!')
                           )
-    
+                          
+    def add_tabs(self):
+        lst = list(self._text)
+        i = len(lst) - 1
+        while i >= 0:
+            if lst[i] == '\n' and not i in self._breaks:
+                if i + 1 < len(lst):
+                    if lst[i+1] != '\n' and not lst[i+1].isspace():
+                        lst.insert(i+1,self._tab)
+            i -= 1
+        self._text = ''.join(lst)
+
+
 
 class Browse:
     
@@ -125,6 +139,7 @@ if __name__ == '__main__':
             parse = Parse(text=text)
         parse.pretty()
         parse.wrap()
+        parse.add_tabs()
         timer.end()
         browse = Browse(text=parse._text)
         browse.run()
