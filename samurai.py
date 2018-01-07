@@ -5,10 +5,20 @@ gettext_windows.setup_env()
 gettext.install('shared','./locale')
 
 import sys
+#import re
+#import lxml
+#from lxml.html.clean import Cleaner
 import urllib.request
 import bs4 as bs
 import shutil as sl
 import shared as sh
+
+#re_tags = re.compile(r'<[^>]+>')
+'''
+cleaner = Cleaner()
+cleaner.javascript = True
+cleaner.style      = True
+'''
 
 
 class Parse:
@@ -33,6 +43,8 @@ class Parse:
             self._width = 80
         
     def pretty(self):
+        timer = sh.Timer('Parse.pretty') # todo: del
+        timer.start() # todo: del
         if self._text:
             text = sh.Text(text=self._text,Silent=False)
             text.convert_line_breaks()
@@ -44,23 +56,23 @@ class Parse:
             # Allow only 2 consequent line breaks
             while '\n\n\n' in self._text:
                 self._text = self._text.replace('\n\n\n','\n\n')
-            # cur # todo: del
-            #self._text = self._text.splitlines()
-            #self._text = '\n'.join([self._tab + line for line in self._text])
         else:
             sh.log.append ('Parse.pretty'
                           ,_('WARNING')
                           ,_('Empty input is not allowed!')
                           )
+        timer.end() # todo: del
                           
     def wrap(self):
+        timer = sh.Timer('Parse.wrap') # todo: del
+        timer.start() # todo: del
         if self._width:
             lst = list(self._text)
             count   = 0
             i       = 0
             space_i = 0
             while i < len(lst):
-                if lst[i].isspace():
+                if lst[i] == ' ':
                     space_i = i
                 if lst[i] == '\n':
                     count = -1
@@ -76,9 +88,18 @@ class Parse:
                           ,_('WARNING')
                           ,_('Empty input is not allowed!')
                           )
+        timer.end()  # todo: del
     
     def delete_tags(self):
+        timer = sh.Timer('Parse.delete_tags') # todo: del
+        timer.start() # todo: del
         if self._text:
+            # cur
+            #self._text = re_tags.sub('',self._text)
+            '''
+            data = cleaner.clean_html(lxml.html.parse(self._text))
+            self._text = lxml.html.tostring(data)
+            '''
             try:
                 self.soup = bs.BeautifulSoup(self._text,'html.parser')
                 for script in self.soup.find_all('script'): #,src=False
@@ -94,17 +115,22 @@ class Parse:
                           ,_('WARNING')
                           ,_('Empty input is not allowed!')
                           )
+        timer.end() # todo: del
                           
     def add_tabs(self):
+        timer = sh.Timer('Parse.add_tabs') # todo: del
+        timer.start() # todo: del
         lst = list(self._text)
         i = len(lst) - 1
         while i >= 0:
             if lst[i] == '\n' and not i in self._breaks:
                 if i + 1 < len(lst):
-                    if lst[i+1] != '\n' and not lst[i+1].isspace():
+                    # 'isspace' will be 0,16s slower than ' '
+                    if lst[i+1] != '\n' and not lst[i+1] == ' ':
                         lst.insert(i+1,self._tab)
             i -= 1
         self._text = ''.join(lst)
+        timer.end() # todo: del
 
 
 
@@ -130,7 +156,12 @@ if __name__ == '__main__':
         if sys.argv[1].startswith('http'):
             #url = 'https://youtube.com'
             #url = 'https://en.wikipedia.org/wiki/Bushido'
-            get = sh.Get(url=sys.argv[1])
+            if len(sys.argv) > 2:
+                get = sh.Get (url      = sys.argv[1]
+                             ,encoding = sys.argv[2]
+                             )
+            else:
+                get = sh.Get(url=sys.argv[1])
             get.run()
             parse = Parse(text=get._html)
             parse.delete_tags()
