@@ -35,7 +35,7 @@ class Parse:
                       )
         self._width -= 2 + len(self._tab)
         if self._width <= 0:
-            print(self._width) # todo: del
+            print(self._width) #todo: del
             sh.log.append ('Parse.__init__'
                           ,_('WARNING')
                           ,_('Wrong input data!')
@@ -43,8 +43,8 @@ class Parse:
             self._width = 80
         
     def pretty(self):
-        timer = sh.Timer('Parse.pretty') # todo: del
-        timer.start() # todo: del
+        timer = sh.Timer('Parse.pretty') #todo: del
+        timer.start() #todo: del
         if self._text:
             text = sh.Text(text=self._text,Silent=False)
             text.convert_line_breaks()
@@ -61,11 +61,11 @@ class Parse:
                           ,_('WARNING')
                           ,_('Empty input is not allowed!')
                           )
-        timer.end() # todo: del
+        timer.end() #todo: del
                           
     def wrap(self):
-        timer = sh.Timer('Parse.wrap') # todo: del
-        timer.start() # todo: del
+        timer = sh.Timer('Parse.wrap') #todo: del
+        timer.start() #todo: del
         if self._width:
             lst = list(self._text)
             count   = 0
@@ -88,11 +88,11 @@ class Parse:
                           ,_('WARNING')
                           ,_('Empty input is not allowed!')
                           )
-        timer.end()  # todo: del
+        timer.end()  #todo: del
     
     def delete_tags(self):
-        timer = sh.Timer('Parse.delete_tags') # todo: del
-        timer.start() # todo: del
+        timer = sh.Timer('Parse.delete_tags') #todo: del
+        timer.start() #todo: del
         if self._text:
             # cur
             #self._text = re_tags.sub('',self._text)
@@ -115,11 +115,11 @@ class Parse:
                           ,_('WARNING')
                           ,_('Empty input is not allowed!')
                           )
-        timer.end() # todo: del
+        timer.end() #todo: del
                           
     def add_tabs(self):
-        timer = sh.Timer('Parse.add_tabs') # todo: del
-        timer.start() # todo: del
+        timer = sh.Timer('Parse.add_tabs') #todo: del
+        timer.start() #todo: del
         lst = list(self._text)
         i = len(lst) - 1
         while i >= 0:
@@ -130,7 +130,7 @@ class Parse:
                         lst.insert(i+1,self._tab)
             i -= 1
         self._text = ''.join(lst)
-        timer.end() # todo: del
+        timer.end() #todo: del
 
 
 
@@ -174,7 +174,7 @@ if __name__ == '__main__':
         timer.end()
         browse = Browse(text=parse._text)
         browse.run()
-    # todo: do not warn when console UI is ready
+    #todo: do not warn when console UI is ready
     else:
         sh.log.append ('samurai'
                       ,_('INFO')
