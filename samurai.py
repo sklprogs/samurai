@@ -1,24 +1,16 @@
 #!/usr/bin/python3
 
+import sys
+import urllib.request
+import lxml.html
+import shutil as sl
+import shared as sh
+import bs4    as bs
+
 import gettext, gettext_windows
 gettext_windows.setup_env()
 gettext.install('shared','./locale')
 
-import sys
-#import re
-#import lxml
-#from lxml.html.clean import Cleaner
-import urllib.request
-import bs4 as bs
-import shutil as sl
-import shared as sh
-
-#re_tags = re.compile(r'<[^>]+>')
-'''
-cleaner = Cleaner()
-cleaner.javascript = True
-cleaner.style      = True
-'''
 
 
 class Parse:
@@ -46,7 +38,7 @@ class Parse:
         timer = sh.Timer('Parse.pretty') #todo: del
         timer.start() #todo: del
         if self._text:
-            text = sh.Text(text=self._text,Silent=False)
+            text = sh.Text(text=self._text)
             text.convert_line_breaks()
             text.strip_lines()
             text.tabs2spaces()
@@ -94,17 +86,19 @@ class Parse:
         timer = sh.Timer('Parse.delete_tags') #todo: del
         timer.start() #todo: del
         if self._text:
-            # cur
-            #self._text = re_tags.sub('',self._text)
-            '''
-            data = cleaner.clean_html(lxml.html.parse(self._text))
-            self._text = lxml.html.tostring(data)
-            '''
             try:
+                '''
+                #self._text = lxml.html.fromstring(self._text).text_content()
+                import re
+                self._text = re.sub('<.*?>','',self._text)
+                #from xml.etree.ElementTree import ElementTree
+                #self._text = ''.join(xml.etree.ElementTree.fromstring(self._text).itertext())
+                '''
                 self.soup = bs.BeautifulSoup(self._text,'html.parser')
                 for script in self.soup.find_all('script'): #,src=False
                     script.decompose()
                 self._text = self.soup.get_text()
+
             except:
                 sh.log.append ('Parse.delete_tags'
                               ,_('WARNING')
@@ -150,6 +144,7 @@ class Browse:
 
 
 if __name__ == '__main__':
+    sh.objs.mes(Silent=True)
     if sys.argv and len(sys.argv) > 1:
         timer = sh.Timer()
         timer.start()
