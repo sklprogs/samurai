@@ -9,7 +9,7 @@ import bs4    as bs
 
 import gettext, gettext_windows
 gettext_windows.setup_env()
-gettext.install('shared','./locale')
+gettext.install('shared','../resources/locale')
 
 
 
