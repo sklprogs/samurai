@@ -1,0 +1,851 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: samurai\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-11 10:19+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Peter Sklyar <skl.progs@gmail.com>\n"
+"Language-Team: Peter Sklyar <skl.progs@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /usr/local/bin/samurai/src\n"
+
+#: /usr/local/bin/samurai/src/shared.py:156
+msgid "QUESTION"
+msgstr "ВОПРОС"
+
+#: /usr/local/bin/samurai/src/shared.py:157
+#, python-format
+msgid "ATTENTION: Do yo really want to rewrite file \"%s\"?"
+msgstr "ВНИМАНИЕ: Перезаписать файл \"%s\"?"
+
+#: /usr/local/bin/samurai/src/shared.py:193
+#: /usr/local/bin/samurai/src/shared.py:2521
+#: /usr/local/bin/samurai/src/shared.py:2974
+#: /usr/local/bin/samurai/src/shared.py:3377
+#: /usr/local/bin/samurai/src/shared.py:3702
+#: /usr/local/bin/samurai/src/shared.py:3720
+msgid "DEBUG"
+msgstr "ОТЛАДКА"
+
+#: /usr/local/bin/samurai/src/shared.py:194
+#, python-format
+msgid "Custom arguments: \"%s\""
+msgstr "Особые параметры: \"%s\""
+
+#: /usr/local/bin/samurai/src/shared.py:205
+#: /usr/local/bin/samurai/src/shared.py:211
+#: /usr/local/bin/samurai/src/shared.py:220
+#: /usr/local/bin/samurai/src/shared.py:229
+#: /usr/local/bin/samurai/src/shared.py:238
+#: /usr/local/bin/samurai/src/shared.py:311
+#: /usr/local/bin/samurai/src/shared.py:332
+#: /usr/local/bin/samurai/src/shared.py:341
+#: /usr/local/bin/samurai/src/shared.py:360
+#: /usr/local/bin/samurai/src/shared.py:381
+#: /usr/local/bin/samurai/src/shared.py:435
+#: /usr/local/bin/samurai/src/shared.py:445
+#: /usr/local/bin/samurai/src/shared.py:602
+#: /usr/local/bin/samurai/src/shared.py:626
+#: /usr/local/bin/samurai/src/shared.py:736
+#: /usr/local/bin/samurai/src/shared.py:749
+#: /usr/local/bin/samurai/src/shared.py:827
+#: /usr/local/bin/samurai/src/shared.py:858
+#: /usr/local/bin/samurai/src/shared.py:1501
+#: /usr/local/bin/samurai/src/shared.py:1530
+#: /usr/local/bin/samurai/src/shared.py:1547
+#: /usr/local/bin/samurai/src/shared.py:1575
+#: /usr/local/bin/samurai/src/shared.py:1648
+#: /usr/local/bin/samurai/src/shared.py:1736
+#: /usr/local/bin/samurai/src/shared.py:1743
+#: /usr/local/bin/samurai/src/shared.py:1844
+#: /usr/local/bin/samurai/src/shared.py:1850
+#: /usr/local/bin/samurai/src/shared.py:1862
+#: /usr/local/bin/samurai/src/shared.py:2017
+#: /usr/local/bin/samurai/src/shared.py:2042
+#: /usr/local/bin/samurai/src/shared.py:2166
+#: /usr/local/bin/samurai/src/shared.py:2336
+#: /usr/local/bin/samurai/src/shared.py:2364
+#: /usr/local/bin/samurai/src/shared.py:2511
+#: /usr/local/bin/samurai/src/shared.py:2678
+#: /usr/local/bin/samurai/src/shared.py:2713
+#: /usr/local/bin/samurai/src/shared.py:2804
+#: /usr/local/bin/samurai/src/shared.py:4106
+#: /usr/local/bin/samurai/src/shared.py:4127
+#: /usr/local/bin/samurai/src/shared.py:4182
+msgid "ERROR"
+msgstr "ОШИБКА"
+
+#: /usr/local/bin/samurai/src/shared.py:206
+#, python-format
+msgid "Failed to run \"%s\"!"
+msgstr "Не удалось запустить \"%s\"!"
+
+#: /usr/local/bin/samurai/src/shared.py:212
+#: /usr/local/bin/samurai/src/shared.py:312
+#: /usr/local/bin/samurai/src/shared.py:361
+#: /usr/local/bin/samurai/src/shared.py:382
+#: /usr/local/bin/samurai/src/shared.py:737
+#: /usr/local/bin/samurai/src/shared.py:1744
+#: /usr/local/bin/samurai/src/shared.py:3044
+#: /usr/local/bin/samurai/src/shared.py:3063
+msgid "Not enough input data!"
+msgstr "Недостаточно входных данных!"
+
+#: /usr/local/bin/samurai/src/shared.py:221
+#: /usr/local/bin/samurai/src/shared.py:230
+#: /usr/local/bin/samurai/src/shared.py:239
+msgid "Unable to open the file in an external program. You should probably check the file associations."
+msgstr "Не удается открыть файл во внешней программе. Возможно, Вам стоит проверить ассоциации файлов."
+
+#: /usr/local/bin/samurai/src/shared.py:270
+#: /usr/local/bin/samurai/src/shared.py:280
+#: /usr/local/bin/samurai/src/shared.py:294
+#: /usr/local/bin/samurai/src/shared.py:368
+#: /usr/local/bin/samurai/src/shared.py:389
+#: /usr/local/bin/samurai/src/shared.py:434
+#: /usr/local/bin/samurai/src/shared.py:444
+#: /usr/local/bin/samurai/src/shared.py:518
+#: /usr/local/bin/samurai/src/shared.py:524
+#: /usr/local/bin/samurai/src/shared.py:538
+#: /usr/local/bin/samurai/src/shared.py:562
+#: /usr/local/bin/samurai/src/shared.py:581
+#: /usr/local/bin/samurai/src/shared.py:586
+#: /usr/local/bin/samurai/src/shared.py:610
+#: /usr/local/bin/samurai/src/shared.py:634
+#: /usr/local/bin/samurai/src/shared.py:681
+#: /usr/local/bin/samurai/src/shared.py:687
+#: /usr/local/bin/samurai/src/shared.py:706
+#: /usr/local/bin/samurai/src/shared.py:718
+#: /usr/local/bin/samurai/src/shared.py:742
+#: /usr/local/bin/samurai/src/shared.py:768
+#: /usr/local/bin/samurai/src/shared.py:779
+#: /usr/local/bin/samurai/src/shared.py:790
+#: /usr/local/bin/samurai/src/shared.py:800
+#: /usr/local/bin/samurai/src/shared.py:834
+#: /usr/local/bin/samurai/src/shared.py:993
+#: /usr/local/bin/samurai/src/shared.py:1036
+#: /usr/local/bin/samurai/src/shared.py:1110
+#: /usr/local/bin/samurai/src/shared.py:1135
+#: /usr/local/bin/samurai/src/shared.py:1147
+#: /usr/local/bin/samurai/src/shared.py:1306
+#: /usr/local/bin/samurai/src/shared.py:1312
+#: /usr/local/bin/samurai/src/shared.py:1325
+#: /usr/local/bin/samurai/src/shared.py:1330
+#: /usr/local/bin/samurai/src/shared.py:1344
+#: /usr/local/bin/samurai/src/shared.py:1349
+#: /usr/local/bin/samurai/src/shared.py:1363
+#: /usr/local/bin/samurai/src/shared.py:1368
+#: /usr/local/bin/samurai/src/shared.py:1385
+#: /usr/local/bin/samurai/src/shared.py:1400
+#: /usr/local/bin/samurai/src/shared.py:1432
+#: /usr/local/bin/samurai/src/shared.py:1448
+#: /usr/local/bin/samurai/src/shared.py:1465
+#: /usr/local/bin/samurai/src/shared.py:1470
+#: /usr/local/bin/samurai/src/shared.py:1507
+#: /usr/local/bin/samurai/src/shared.py:1514
+#: /usr/local/bin/samurai/src/shared.py:1560
+#: /usr/local/bin/samurai/src/shared.py:1566
+#: /usr/local/bin/samurai/src/shared.py:1588
+#: /usr/local/bin/samurai/src/shared.py:1605
+#: /usr/local/bin/samurai/src/shared.py:1611
+#: /usr/local/bin/samurai/src/shared.py:1622
+#: /usr/local/bin/samurai/src/shared.py:1633
+#: /usr/local/bin/samurai/src/shared.py:1639
+#: /usr/local/bin/samurai/src/shared.py:1660
+#: /usr/local/bin/samurai/src/shared.py:1677
+#: /usr/local/bin/samurai/src/shared.py:1685
+#: /usr/local/bin/samurai/src/shared.py:1721
+#: /usr/local/bin/samurai/src/shared.py:1825
+#: /usr/local/bin/samurai/src/shared.py:1867
+#: /usr/local/bin/samurai/src/shared.py:1882
+#: /usr/local/bin/samurai/src/shared.py:1922
+#: /usr/local/bin/samurai/src/shared.py:1928
+#: /usr/local/bin/samurai/src/shared.py:1942
+#: /usr/local/bin/samurai/src/shared.py:1978
+#: /usr/local/bin/samurai/src/shared.py:1995
+#: /usr/local/bin/samurai/src/shared.py:2000
+#: /usr/local/bin/samurai/src/shared.py:2025
+#: /usr/local/bin/samurai/src/shared.py:2050
+#: /usr/local/bin/samurai/src/shared.py:2101
+#: /usr/local/bin/samurai/src/shared.py:2107
+#: /usr/local/bin/samurai/src/shared.py:2126
+#: /usr/local/bin/samurai/src/shared.py:2138
+#: /usr/local/bin/samurai/src/shared.py:2177
+#: /usr/local/bin/samurai/src/shared.py:2221
+#: /usr/local/bin/samurai/src/shared.py:2234
+#: /usr/local/bin/samurai/src/shared.py:2245
+#: /usr/local/bin/samurai/src/shared.py:2260
+#: /usr/local/bin/samurai/src/shared.py:2266
+#: /usr/local/bin/samurai/src/shared.py:2287
+#: /usr/local/bin/samurai/src/shared.py:2313
+#: /usr/local/bin/samurai/src/shared.py:2327
+#: /usr/local/bin/samurai/src/shared.py:2350
+#: /usr/local/bin/samurai/src/shared.py:2407
+#: /usr/local/bin/samurai/src/shared.py:2434
+#: /usr/local/bin/samurai/src/shared.py:2440
+#: /usr/local/bin/samurai/src/shared.py:2451
+#: /usr/local/bin/samurai/src/shared.py:2457
+#: /usr/local/bin/samurai/src/shared.py:2600
+#: /usr/local/bin/samurai/src/shared.py:2615
+#: /usr/local/bin/samurai/src/shared.py:2654
+#: /usr/local/bin/samurai/src/shared.py:2665
+#: /usr/local/bin/samurai/src/shared.py:2694
+#: /usr/local/bin/samurai/src/shared.py:2740
+#: /usr/local/bin/samurai/src/shared.py:2752
+#: /usr/local/bin/samurai/src/shared.py:2776
+#: /usr/local/bin/samurai/src/shared.py:2783
+#: /usr/local/bin/samurai/src/shared.py:2809
+#: /usr/local/bin/samurai/src/shared.py:3043
+#: /usr/local/bin/samurai/src/shared.py:3062
+#: /usr/local/bin/samurai/src/shared.py:3102
+#: /usr/local/bin/samurai/src/shared.py:3139
+#: /usr/local/bin/samurai/src/shared.py:3149
+#: /usr/local/bin/samurai/src/shared.py:3182
+#: /usr/local/bin/samurai/src/shared.py:3201
+#: /usr/local/bin/samurai/src/shared.py:3211
+#: /usr/local/bin/samurai/src/shared.py:3230
+#: /usr/local/bin/samurai/src/shared.py:3249
+#: /usr/local/bin/samurai/src/shared.py:3264
+#: /usr/local/bin/samurai/src/shared.py:3279
+#: /usr/local/bin/samurai/src/shared.py:3298
+#: /usr/local/bin/samurai/src/shared.py:3309
+#: /usr/local/bin/samurai/src/shared.py:3323
+#: /usr/local/bin/samurai/src/shared.py:3337
+#: /usr/local/bin/samurai/src/shared.py:3351
+#: /usr/local/bin/samurai/src/shared.py:3383
+#: /usr/local/bin/samurai/src/shared.py:3389
+#: /usr/local/bin/samurai/src/shared.py:3395
+#: /usr/local/bin/samurai/src/shared.py:3416
+#: /usr/local/bin/samurai/src/shared.py:3422
+#: /usr/local/bin/samurai/src/shared.py:3439
+#: /usr/local/bin/samurai/src/shared.py:3464
+#: /usr/local/bin/samurai/src/shared.py:3475
+#: /usr/local/bin/samurai/src/shared.py:3488
+#: /usr/local/bin/samurai/src/shared.py:3503
+#: /usr/local/bin/samurai/src/shared.py:3519
+#: /usr/local/bin/samurai/src/shared.py:3536
+#: /usr/local/bin/samurai/src/shared.py:3795
+#: /usr/local/bin/samurai/src/shared.py:3804
+#: /usr/local/bin/samurai/src/shared.py:3813
+#: /usr/local/bin/samurai/src/shared.py:3871
+#: /usr/local/bin/samurai/src/shared.py:3920
+#: /usr/local/bin/samurai/src/shared.py:3933
+#: /usr/local/bin/samurai/src/shared.py:4028
+#: /usr/local/bin/samurai/src/shared.py:4044
+#: /usr/local/bin/samurai/src/shared.py:4050
+#: /usr/local/bin/samurai/src/shared.py:4066
+#: /usr/local/bin/samurai/src/shared.py:4071
+#: /usr/local/bin/samurai/src/shared.py:4091
+#: /usr/local/bin/samurai/src/shared.py:4112
+#: /usr/local/bin/samurai/src/shared.py:4133
+#: /usr/local/bin/samurai/src/shared.py:4168
+#: /usr/local/bin/samurai/src/shared.py:4188
+#: /usr/local/bin/samurai/src/shared.py:4202
+#: /usr/local/bin/samurai/src/samurai.py:32
+#: /usr/local/bin/samurai/src/samurai.py:53
+#: /usr/local/bin/samurai/src/samurai.py:80
+#: /usr/local/bin/samurai/src/samurai.py:104
+#: /usr/local/bin/samurai/src/samurai.py:109
+#: /usr/local/bin/samurai/src/samurai.py:141
+msgid "WARNING"
+msgstr "ПРЕДУПРЕЖДЕНИЕ"
+
+#: /usr/local/bin/samurai/src/shared.py:271
+#: /usr/local/bin/samurai/src/shared.py:281
+#: /usr/local/bin/samurai/src/shared.py:295
+#: /usr/local/bin/samurai/src/shared.py:369
+#: /usr/local/bin/samurai/src/shared.py:390
+#: /usr/local/bin/samurai/src/shared.py:525
+#: /usr/local/bin/samurai/src/shared.py:587
+#: /usr/local/bin/samurai/src/shared.py:611
+#: /usr/local/bin/samurai/src/shared.py:635
+#: /usr/local/bin/samurai/src/shared.py:688
+#: /usr/local/bin/samurai/src/shared.py:707
+#: /usr/local/bin/samurai/src/shared.py:719
+#: /usr/local/bin/samurai/src/shared.py:769
+#: /usr/local/bin/samurai/src/shared.py:780
+#: /usr/local/bin/samurai/src/shared.py:791
+#: /usr/local/bin/samurai/src/shared.py:801
+#: /usr/local/bin/samurai/src/shared.py:835
+#: /usr/local/bin/samurai/src/shared.py:1313
+#: /usr/local/bin/samurai/src/shared.py:1331
+#: /usr/local/bin/samurai/src/shared.py:1350
+#: /usr/local/bin/samurai/src/shared.py:1369
+#: /usr/local/bin/samurai/src/shared.py:1386
+#: /usr/local/bin/samurai/src/shared.py:1401
+#: /usr/local/bin/samurai/src/shared.py:1449
+#: /usr/local/bin/samurai/src/shared.py:1471
+#: /usr/local/bin/samurai/src/shared.py:1567
+#: /usr/local/bin/samurai/src/shared.py:1589
+#: /usr/local/bin/samurai/src/shared.py:1612
+#: /usr/local/bin/samurai/src/shared.py:1623
+#: /usr/local/bin/samurai/src/shared.py:1640
+#: /usr/local/bin/samurai/src/shared.py:1661
+#: /usr/local/bin/samurai/src/shared.py:1686
+#: /usr/local/bin/samurai/src/shared.py:1826
+#: /usr/local/bin/samurai/src/shared.py:1868
+#: /usr/local/bin/samurai/src/shared.py:1883
+#: /usr/local/bin/samurai/src/shared.py:1929
+#: /usr/local/bin/samurai/src/shared.py:2001
+#: /usr/local/bin/samurai/src/shared.py:2026
+#: /usr/local/bin/samurai/src/shared.py:2051
+#: /usr/local/bin/samurai/src/shared.py:2108
+#: /usr/local/bin/samurai/src/shared.py:2127
+#: /usr/local/bin/samurai/src/shared.py:2139
+#: /usr/local/bin/samurai/src/shared.py:2178
+#: /usr/local/bin/samurai/src/shared.py:2235
+#: /usr/local/bin/samurai/src/shared.py:2246
+#: /usr/local/bin/samurai/src/shared.py:2267
+#: /usr/local/bin/samurai/src/shared.py:2288
+#: /usr/local/bin/samurai/src/shared.py:2314
+#: /usr/local/bin/samurai/src/shared.py:2328
+#: /usr/local/bin/samurai/src/shared.py:2351
+#: /usr/local/bin/samurai/src/shared.py:2408
+#: /usr/local/bin/samurai/src/shared.py:2441
+#: /usr/local/bin/samurai/src/shared.py:2458
+#: /usr/local/bin/samurai/src/shared.py:2666
+#: /usr/local/bin/samurai/src/shared.py:2741
+#: /usr/local/bin/samurai/src/shared.py:2753
+#: /usr/local/bin/samurai/src/shared.py:2784
+#: /usr/local/bin/samurai/src/shared.py:2810
+#: /usr/local/bin/samurai/src/shared.py:3103
+#: /usr/local/bin/samurai/src/shared.py:3140
+#: /usr/local/bin/samurai/src/shared.py:3150
+#: /usr/local/bin/samurai/src/shared.py:3183
+#: /usr/local/bin/samurai/src/shared.py:3202
+#: /usr/local/bin/samurai/src/shared.py:3212
+#: /usr/local/bin/samurai/src/shared.py:3231
+#: /usr/local/bin/samurai/src/shared.py:3250
+#: /usr/local/bin/samurai/src/shared.py:3265
+#: /usr/local/bin/samurai/src/shared.py:3280
+#: /usr/local/bin/samurai/src/shared.py:3299
+#: /usr/local/bin/samurai/src/shared.py:3310
+#: /usr/local/bin/samurai/src/shared.py:3324
+#: /usr/local/bin/samurai/src/shared.py:3338
+#: /usr/local/bin/samurai/src/shared.py:3352
+#: /usr/local/bin/samurai/src/shared.py:3396
+#: /usr/local/bin/samurai/src/shared.py:3423
+#: /usr/local/bin/samurai/src/shared.py:3440
+#: /usr/local/bin/samurai/src/shared.py:3476
+#: /usr/local/bin/samurai/src/shared.py:3489
+#: /usr/local/bin/samurai/src/shared.py:3504
+#: /usr/local/bin/samurai/src/shared.py:3520
+#: /usr/local/bin/samurai/src/shared.py:3537
+#: /usr/local/bin/samurai/src/shared.py:3921
+#: /usr/local/bin/samurai/src/shared.py:3934
+#: /usr/local/bin/samurai/src/shared.py:4113
+#: /usr/local/bin/samurai/src/shared.py:4134
+#: /usr/local/bin/samurai/src/shared.py:4169
+#: /usr/local/bin/samurai/src/shared.py:4189
+#: /usr/local/bin/samurai/src/shared.py:4203
+msgid "Operation has been canceled."
+msgstr "Операция отменена."
+
+#: /usr/local/bin/samurai/src/shared.py:322
+#: /usr/local/bin/samurai/src/shared.py:403
+#: /usr/local/bin/samurai/src/shared.py:457
+#: /usr/local/bin/samurai/src/shared.py:505
+#: /usr/local/bin/samurai/src/shared.py:808
+#: /usr/local/bin/samurai/src/shared.py:853
+#: /usr/local/bin/samurai/src/shared.py:1380
+#: /usr/local/bin/samurai/src/shared.py:1522
+#: /usr/local/bin/samurai/src/shared.py:1539
+#: /usr/local/bin/samurai/src/shared.py:1583
+#: /usr/local/bin/samurai/src/shared.py:1597
+#: /usr/local/bin/samurai/src/shared.py:1655
+#: /usr/local/bin/samurai/src/shared.py:1669
+#: /usr/local/bin/samurai/src/shared.py:1714
+#: /usr/local/bin/samurai/src/shared.py:1727
+#: /usr/local/bin/samurai/src/shared.py:1831
+#: /usr/local/bin/samurai/src/shared.py:1877
+#: /usr/local/bin/samurai/src/shared.py:1909
+#: /usr/local/bin/samurai/src/shared.py:2154
+#: /usr/local/bin/samurai/src/shared.py:2253
+#: /usr/local/bin/samurai/src/shared.py:2342
+#: /usr/local/bin/samurai/src/shared.py:2356
+#: /usr/local/bin/samurai/src/shared.py:2394
+#: /usr/local/bin/samurai/src/shared.py:2401
+#: /usr/local/bin/samurai/src/shared.py:2586
+#: /usr/local/bin/samurai/src/shared.py:2647
+#: /usr/local/bin/samurai/src/shared.py:2671
+#: /usr/local/bin/samurai/src/shared.py:2688
+#: /usr/local/bin/samurai/src/shared.py:2702
+#: /usr/local/bin/samurai/src/shared.py:2733
+#: /usr/local/bin/samurai/src/shared.py:3087
+#: /usr/local/bin/samurai/src/shared.py:3848
+#: /usr/local/bin/samurai/src/shared.py:3893
+#: /usr/local/bin/samurai/src/shared.py:4022
+#: /usr/local/bin/samurai/src/shared.py:4143
+#: /usr/local/bin/samurai/src/shared.py:4149
+#: /usr/local/bin/samurai/src/shared.py:4155
+#: /usr/local/bin/samurai/src/shared.py:4224
+#: /usr/local/bin/samurai/src/samurai.py:24
+#: /usr/local/bin/samurai/src/samurai.py:175
+msgid "INFO"
+msgstr "ИНФОРМАЦИЯ"
+
+#: /usr/local/bin/samurai/src/shared.py:323
+#: /usr/local/bin/samurai/src/shared.py:1832
+#, python-format
+msgid "Write file \"%s\""
+msgstr "Запись файла \"%s\""
+
+#: /usr/local/bin/samurai/src/shared.py:333
+#: /usr/local/bin/samurai/src/shared.py:1845
+#, python-format
+msgid "Unable to write file \"%s\"!"
+msgstr "Не удается записать файл \"%s\"!"
+
+#: /usr/local/bin/samurai/src/shared.py:342
+#: /usr/local/bin/samurai/src/shared.py:1851
+#, python-format
+msgid ""
+"An unknown mode \"%s\"!\n"
+"\n"
+"The following modes are supported: \"%s\"."
+msgstr ""
+"Неизвестный режим \"%s\"!\n"
+"\n"
+"Поддерживаются следующие режимы: \"%s\"."
+
+#: /usr/local/bin/samurai/src/shared.py:421
+msgid "***** Start of log. *****"
+msgstr "***** Начало записи лога. *****"
+
+#: /usr/local/bin/samurai/src/shared.py:506
+#: /usr/local/bin/samurai/src/shared.py:1910
+#, python-format
+msgid "Entries deleted: %d (%d-%d)"
+msgstr "Удалено вхождений: %d (%d-%d)"
+
+#: /usr/local/bin/samurai/src/shared.py:519
+#: /usr/local/bin/samurai/src/shared.py:682
+#: /usr/local/bin/samurai/src/shared.py:1923
+#: /usr/local/bin/samurai/src/shared.py:2102
+#, python-format
+msgid "File \"%s\" is not sortable!"
+msgstr "Файл \"%s\" не подлежит сортировке!"
+
+#: /usr/local/bin/samurai/src/shared.py:539
+#: /usr/local/bin/samurai/src/shared.py:750
+#: /usr/local/bin/samurai/src/shared.py:1433
+#: /usr/local/bin/samurai/src/shared.py:1943
+#: /usr/local/bin/samurai/src/shared.py:2616
+#: /usr/local/bin/samurai/src/shared.py:2695
+#: /usr/local/bin/samurai/src/shared.py:3465
+#: /usr/local/bin/samurai/src/shared.py:4067
+#: /usr/local/bin/samurai/src/samurai.py:33
+msgid "Wrong input data!"
+msgstr "Недопустимые входные данные!"
+
+#: /usr/local/bin/samurai/src/shared.py:563
+#, python-format
+msgid "Dictionary \"%s\": Incorrect line #%d: \"%s\"!"
+msgstr "Словарь \"%s\": Неправильная строка №%d: \"%s\"!"
+
+#: /usr/local/bin/samurai/src/shared.py:582
+#: /usr/local/bin/samurai/src/shared.py:1502
+#: /usr/local/bin/samurai/src/shared.py:1863
+#: /usr/local/bin/samurai/src/shared.py:1996
+#: /usr/local/bin/samurai/src/shared.py:2601
+#: /usr/local/bin/samurai/src/shared.py:2777
+#: /usr/local/bin/samurai/src/shared.py:3796
+#: /usr/local/bin/samurai/src/shared.py:3872
+#: /usr/local/bin/samurai/src/shared.py:4051
+#: /usr/local/bin/samurai/src/shared.py:4072
+#: /usr/local/bin/samurai/src/shared.py:4092
+#: /usr/local/bin/samurai/src/samurai.py:54
+#: /usr/local/bin/samurai/src/samurai.py:81
+#: /usr/local/bin/samurai/src/samurai.py:110
+#: /usr/local/bin/samurai/src/samurai.py:142
+msgid "Empty input is not allowed!"
+msgstr "Пустые входные данные не допускаются!"
+
+#: /usr/local/bin/samurai/src/shared.py:603
+#: /usr/local/bin/samurai/src/shared.py:627
+#: /usr/local/bin/samurai/src/shared.py:2018
+#: /usr/local/bin/samurai/src/shared.py:2043
+#: /usr/local/bin/samurai/src/shared.py:4107
+#: /usr/local/bin/samurai/src/shared.py:4128
+#: /usr/local/bin/samurai/src/shared.py:4183
+#, python-format
+msgid "The condition \"%s\" is not observed!"
+msgstr "Условие \"%s\" не выполнено!"
+
+#: /usr/local/bin/samurai/src/shared.py:743
+#: /usr/local/bin/samurai/src/shared.py:1508
+#, python-format
+msgid "File \"%s\" has not been found!"
+msgstr "Файл \"%s\" не найден!"
+
+#: /usr/local/bin/samurai/src/shared.py:809
+#: /usr/local/bin/samurai/src/shared.py:2155
+#, python-format
+msgid "Load file \"%s\""
+msgstr "Загрузка файла \"%s\""
+
+#: /usr/local/bin/samurai/src/shared.py:828
+#: /usr/local/bin/samurai/src/shared.py:2167
+#, python-format
+msgid "Unable to read file \"%s\"!"
+msgstr "Не удается прочитать файл \"%s\"!"
+
+#: /usr/local/bin/samurai/src/shared.py:854
+#, python-format
+msgid "Convert \"%s\" to an integer"
+msgstr "Конвертация \"%s\" в целое число"
+
+#: /usr/local/bin/samurai/src/shared.py:859
+#, python-format
+msgid "Integer is required at input, but found \"%s\"! Return 0"
+msgstr "На входе должно быть целое число, но получено \"%s\"! Возвращаю 0"
+
+#: /usr/local/bin/samurai/src/shared.py:994
+#, python-format
+msgid "Different number of opening and closing brackets: \"%s\": %d; \"%s\": %d!"
+msgstr "Разное число открывающих и закрывающих скобок: \"%s\": %d; \"%s\": %d!"
+
+#: /usr/local/bin/samurai/src/shared.py:1037
+msgid "Empty strings are not supported!"
+msgstr "Поддерживаются только непустые строки!"
+
+#: /usr/local/bin/samurai/src/shared.py:1111
+msgid "Commas and/or semicolons or line breaks can be used, but not altogether!"
+msgstr "Можно использовать запятые и/или точки с запятой или переносы строк, но не все сразу!"
+
+#: /usr/local/bin/samurai/src/shared.py:1136
+#, python-format
+msgid "Failed to convert \"%s\" to an integer!"
+msgstr "Не удалось конвертировать \"%s\" в целое число!"
+
+#: /usr/local/bin/samurai/src/shared.py:1148
+#, python-format
+msgid "Failed to convert \"%s\" to a floating-point number!"
+msgstr "Не удалось конвертировать \"%s\" в число с плавающей точкой!"
+
+#: /usr/local/bin/samurai/src/shared.py:1307
+#: /usr/local/bin/samurai/src/shared.py:1326
+#: /usr/local/bin/samurai/src/shared.py:1345
+#: /usr/local/bin/samurai/src/shared.py:1364
+#: /usr/local/bin/samurai/src/shared.py:1466
+msgid "Set time parameters are incorrect or not supported."
+msgstr "Заданные параметры времени неверны или не поддерживаются."
+
+#: /usr/local/bin/samurai/src/shared.py:1381
+msgid "Note: it will be Monday!"
+msgstr "Обратите внимание: указанная дата - понедельник!"
+
+#: /usr/local/bin/samurai/src/shared.py:1407
+msgid "Jan"
+msgstr "янв"
+
+#: /usr/local/bin/samurai/src/shared.py:1409
+msgid "Feb"
+msgstr "фев"
+
+#: /usr/local/bin/samurai/src/shared.py:1411
+msgid "Mar"
+msgstr "мар"
+
+#: /usr/local/bin/samurai/src/shared.py:1413
+msgid "Apr"
+msgstr "апр"
+
+#: /usr/local/bin/samurai/src/shared.py:1415
+msgid "May"
+msgstr "май"
+
+#: /usr/local/bin/samurai/src/shared.py:1417
+msgid "Jun"
+msgstr "июн"
+
+#: /usr/local/bin/samurai/src/shared.py:1419
+msgid "Jul"
+msgstr "июл"
+
+#: /usr/local/bin/samurai/src/shared.py:1421
+msgid "Aug"
+msgstr "авг"
+
+#: /usr/local/bin/samurai/src/shared.py:1423
+msgid "Sep"
+msgstr "сен"
+
+#: /usr/local/bin/samurai/src/shared.py:1425
+msgid "Oct"
+msgstr "окт"
+
+#: /usr/local/bin/samurai/src/shared.py:1427
+msgid "Nov"
+msgstr "ноя"
+
+#: /usr/local/bin/samurai/src/shared.py:1429
+msgid "Dec"
+msgstr "дек"
+
+#: /usr/local/bin/samurai/src/shared.py:1515
+#, python-format
+msgid "The object \"%s\" is not a file!"
+msgstr "Объект \"%s\" не является файлом!"
+
+#: /usr/local/bin/samurai/src/shared.py:1523
+#: /usr/local/bin/samurai/src/shared.py:2357
+#, python-format
+msgid "Copy \"%s\" to \"%s\""
+msgstr "Копирование \"%s\" в \"%s\""
+
+#: /usr/local/bin/samurai/src/shared.py:1531
+#, python-format
+msgid "Failed to copy file \"%s\" to \"%s\"!"
+msgstr "Не удалось скопировать файл \"%s\" в \"%s\"!"
+
+#: /usr/local/bin/samurai/src/shared.py:1540
+#, python-format
+msgid "Move \"%s\" to \"%s\""
+msgstr "Перемещение \"%s\" в \"%s\""
+
+#: /usr/local/bin/samurai/src/shared.py:1548
+#, python-format
+msgid "Failed to move \"%s\" to \"%s\"!"
+msgstr "Не удалось переместить \"%s\" в \"%s\"!"
+
+#: /usr/local/bin/samurai/src/shared.py:1561
+#: /usr/local/bin/samurai/src/shared.py:1634
+#, python-format
+msgid "Failed to get the date of the file \"%s\"!"
+msgstr "Не удалось определить дату файла \"%s\"!"
+
+#: /usr/local/bin/samurai/src/shared.py:1576
+#, python-format
+msgid "Unable to copy the file \"%s\" to iself!"
+msgstr "Нельзя скопировать файл \"%s\" сам в себя!"
+
+#: /usr/local/bin/samurai/src/shared.py:1584
+#: /usr/local/bin/samurai/src/shared.py:1656
+#: /usr/local/bin/samurai/src/shared.py:1878
+msgid "Operation has been canceled by the user."
+msgstr "Операция отменена пользователем."
+
+#: /usr/local/bin/samurai/src/shared.py:1598
+#: /usr/local/bin/samurai/src/shared.py:2254
+#, python-format
+msgid "Delete \"%s\""
+msgstr "Удаление \"%s\""
+
+#: /usr/local/bin/samurai/src/shared.py:1606
+#, python-format
+msgid "Failed to delete file \"%s\"!"
+msgstr "Не удается удалить файл \"%s\"!"
+
+#: /usr/local/bin/samurai/src/shared.py:1649
+msgid "Moving is not necessary, because the source and destination are identical."
+msgstr "Перемещение не требуется, поскольку на входе и выходе указан один и тот же объект."
+
+#: /usr/local/bin/samurai/src/shared.py:1670
+#, python-format
+msgid "Change the time of the file \"%s\" to %s"
+msgstr "Изменение времени файла \"%s\" на %s"
+
+#: /usr/local/bin/samurai/src/shared.py:1678
+#, python-format
+msgid "Failed to change the time of the file \"%s\" to \"%s\"!"
+msgstr "Не удалось изменить время файла \"%s\" на \"%s\"!"
+
+#: /usr/local/bin/samurai/src/shared.py:1715
+#: /usr/local/bin/samurai/src/shared.py:2343
+#, python-format
+msgid "Directory \"%s\" already exists."
+msgstr "Каталог \"%s\" уже существует."
+
+#: /usr/local/bin/samurai/src/shared.py:1722
+#, python-format
+msgid "The path \"%s\" is invalid!"
+msgstr "Путь \"%s\" неверен!"
+
+#: /usr/local/bin/samurai/src/shared.py:1728
+#, python-format
+msgid "Create directory \"%s\""
+msgstr "Создание каталога \"%s\""
+
+#: /usr/local/bin/samurai/src/shared.py:1737
+#, python-format
+msgid "Failed to create directory \"%s\"!"
+msgstr "Не удается создать каталог \"%s\"!"
+
+#: /usr/local/bin/samurai/src/shared.py:1979
+msgid "The following lines cannot be parsed:"
+msgstr "Не удается обработать следующие строки:"
+
+#: /usr/local/bin/samurai/src/shared.py:2222
+#: /usr/local/bin/samurai/src/shared.py:3384
+#: /usr/local/bin/samurai/src/shared.py:3390
+#, python-format
+msgid "Wrong input data: \"%s\""
+msgstr "Недопустимые входные данные: \"%s\""
+
+#: /usr/local/bin/samurai/src/shared.py:2261
+#, python-format
+msgid "Failed to delete directory \"%s\"! Delete it manually."
+msgstr "Не удается удалить каталог \"%s\"! Удалите его вручную."
+
+#: /usr/local/bin/samurai/src/shared.py:2337
+#, python-format
+msgid "Unable to copy \"%s\" to iself!"
+msgstr "Нельзя скопировать \"%s\" сам в себя!"
+
+#: /usr/local/bin/samurai/src/shared.py:2365
+#, python-format
+msgid "Failed to copy \"%s\" to \"%s\"!"
+msgstr "Не удалось скопировать \"%s\" в \"%s\"!"
+
+#: /usr/local/bin/samurai/src/shared.py:2381
+msgid "The following sections and/or keys are missing:"
+msgstr "Отсутствуют следующие разделы и/или ключи:"
+
+#: /usr/local/bin/samurai/src/shared.py:2395
+#, python-format
+msgid "New value of the key \"%s\" has been loaded."
+msgstr "Загружено новое значение ключа \"%s\"."
+
+#: /usr/local/bin/samurai/src/shared.py:2402
+#, python-format
+msgid "Keys loaded in total: %d, whereas %d are modified."
+msgstr "Всего загружено ключей: %d, из них измененных: %d"
+
+#: /usr/local/bin/samurai/src/shared.py:2428
+#, python-format
+msgid "Missing sections: %d"
+msgstr "Отсутствующих разделов: %d"
+
+#: /usr/local/bin/samurai/src/shared.py:2430
+#, python-format
+msgid "Missing keys: %d"
+msgstr "Отсутствующих ключей: %d"
+
+#: /usr/local/bin/samurai/src/shared.py:2432
+msgid "The default configuration has been loaded."
+msgstr "Загружена конфигурация по умолчанию."
+
+#: /usr/local/bin/samurai/src/shared.py:2452
+#, python-format
+msgid "Failed to read the configuration file \"%s\". This file must share the same directory with the program and have UTF-8 encoding (no BOM) and UNIX line break type."
+msgstr "Не удается прочитать конфигурационный файл \"%s\". Этот файл должен находиться в одном каталоге с программой и иметь кодировку utf-8 (без BOM), тип разрыва строки - UNIX."
+
+#: /usr/local/bin/samurai/src/shared.py:2512
+#, python-format
+msgid "Failed to open URL \"%s\" in a default browser!"
+msgstr "Не удалось открыть адрес \"%s\" в браузере по умолчанию!"
+
+#: /usr/local/bin/samurai/src/shared.py:2562
+msgid "Differences:"
+msgstr "Различия:"
+
+#: /usr/local/bin/samurai/src/shared.py:2587
+msgid "Texts are identical!"
+msgstr "Различий нет!"
+
+#: /usr/local/bin/samurai/src/shared.py:2648
+#, python-format
+msgid "Delete the symbolic link \"%s\""
+msgstr "Удаление ярлыка \"%s\""
+
+#: /usr/local/bin/samurai/src/shared.py:2655
+#, python-format
+msgid "Failed to remove shortcut \"%s\". Remove it manually and press OK."
+msgstr "Не удается удалить ярлык \"%s\". Удалите его вручную и нажмите OK."
+
+#: /usr/local/bin/samurai/src/shared.py:2672
+#: /usr/local/bin/samurai/src/shared.py:2703
+#, python-format
+msgid "Create a symbolic link \"%s\""
+msgstr "Создание ярлыка \"%s\""
+
+#: /usr/local/bin/samurai/src/shared.py:2679
+#: /usr/local/bin/samurai/src/shared.py:2714
+#, python-format
+msgid "Failed to create shortcut \"%s\". Create it manually and press OK."
+msgstr "Не удается создать ярлык \"%s\". Создайте его вручную и нажмите OK."
+
+#: /usr/local/bin/samurai/src/shared.py:2689
+#: /usr/local/bin/samurai/src/shared.py:2734
+msgid "Nothing to do."
+msgstr "Действие не требуется."
+
+#: /usr/local/bin/samurai/src/shared.py:2805
+msgid "Failed to load an e-mail client."
+msgstr "Не удалось загрузить почтовый клиент."
+
+#: /usr/local/bin/samurai/src/shared.py:3088
+msgid "Analyze the text"
+msgstr "Анализ текста"
+
+#: /usr/local/bin/samurai/src/shared.py:3417
+#, python-format
+msgid "Failed to find words of paragraph #%d!"
+msgstr "Не удалось найти слова абзаца #%d!"
+
+#: /usr/local/bin/samurai/src/shared.py:3805
+#: /usr/local/bin/samurai/src/shared.py:3814
+msgid "The pool is empty!"
+msgstr "Пул пуст!"
+
+#: /usr/local/bin/samurai/src/shared.py:3849
+#, python-format
+msgid "The operation has taken %f s."
+msgstr "Операция завершена за %f с."
+
+#: /usr/local/bin/samurai/src/shared.py:3894
+#, python-format
+msgid "Set the max number of rows to %d"
+msgstr "Задать максимальное число столбцов: %d"
+
+#: /usr/local/bin/samurai/src/shared.py:4023
+#, python-format
+msgid "[OK]: \"%s\""
+msgstr "[Успешно]: \"%s\""
+
+#: /usr/local/bin/samurai/src/shared.py:4029
+#, python-format
+msgid "[FAILED]: \"%s\""
+msgstr "[ОШИБКА]: \"%s\""
+
+#: /usr/local/bin/samurai/src/shared.py:4045
+#, python-format
+msgid "Unable to decode \"%s\"!"
+msgstr "Не удается декодировать \"%s\"!"
+
+#: /usr/local/bin/samurai/src/shared.py:4144
+msgid "No references have been found!"
+msgstr "Ориентиры не найдены!"
+
+#: /usr/local/bin/samurai/src/shared.py:4150
+msgid "No references to the right!"
+msgstr "Справа ориентиров нет!"
+
+#: /usr/local/bin/samurai/src/shared.py:4156
+msgid "No references to the left!"
+msgstr "Слева ориентиров нет!"
+
+#: /usr/local/bin/samurai/src/shared.py:4225
+msgid "Nothing to do!"
+msgstr "Действие не требуется."
+
+#: /usr/local/bin/samurai/src/samurai.py:25
+#, python-format
+msgid "Terminal size: %d columns, %d lines"
+msgstr "Размер терминала: %d столбцов, %d строк"
+
+#: /usr/local/bin/samurai/src/samurai.py:105
+msgid "Failed to parse the page!"
+msgstr "Не удалось обработать страницу!"
+
+#: /usr/local/bin/samurai/src/samurai.py:176
+msgid "Please provide a URL as a command-line argument!"
+msgstr "Пожалуйста, укажите URL в качестве аргумента командной строки!"
+
