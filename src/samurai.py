@@ -2,10 +2,11 @@
 
 import sys
 import urllib.request
+import html
 import lxml.html
+#import bs4    as bs
 import shutil as sl
 import shared as sh
-import bs4    as bs
 
 import gettext, gettext_windows
 gettext_windows.setup_env()
@@ -87,8 +88,9 @@ class Parse:
         timer.start() #todo: del
         if self._text:
             try:
+                self._text = lxml.html.fromstring(self._text).text_content()
+                """
                 '''
-                #self._text = lxml.html.fromstring(self._text).text_content()
                 import re
                 self._text = re.sub('<.*?>','',self._text)
                 #from xml.etree.ElementTree import ElementTree
@@ -98,7 +100,8 @@ class Parse:
                 for script in self.soup.find_all('script'): #,src=False
                     script.decompose()
                 self._text = self.soup.get_text()
-
+                """
+                self._text = html.unescape(self._text)
             except:
                 sh.log.append ('Parse.delete_tags'
                               ,_('WARNING')
