@@ -3,151 +3,139 @@
 import sys
 import urllib.request
 import html
-import lxml.html
-#import bs4    as bs
-import shutil as sl
-import shared as sh
+#import lxml.html
+import shutil
+import bs4 as bs
 
-import gettext, gettext_windows
-gettext_windows.setup_env()
-gettext.install('samurai','../resources/locale')
+import skl_shared.shared as sh
+from skl_shared.localize import _
+
+sh.GUI_MES = False
 
 
 
 class Parse:
     
     def __init__(self,text):
-        self._breaks = []
-        self._tab    = ' ' * 4
-        self._text   = text
-        self._width, self._height = sl.get_terminal_size()
-        sh.log.append ('Parse.__init__'
-                      ,_('INFO')
-                      ,_('Terminal size: %d columns, %d lines') \
-                      % (self._width,self._height)
-                      )
-        self._width -= 2 + len(self._tab)
-        if self._width <= 0:
-            print(self._width) #todo: del
-            sh.log.append ('Parse.__init__'
-                          ,_('WARNING')
-                          ,_('Wrong input data!')
-                          )
-            self._width = 80
+        f = '[Samurai] samurai.Parse.__init__'
+        self.breaks = []
+        self.tab = ' ' * 4
+        self.text = text
+        self.width, self.height = shutil.get_terminal_size()
+        mes = _('Terminal size: {} columns, {} lines')
+        mes = mes.format(self.width,self.height)
+        sh.objs.get_mes(f,mes,True).show_debug()
+        self.width -= 2 + len(self.tab)
+        if self.width <= 0:
+            mes = _('Wrong input data: "{}"!').format(self.width)
+            sh.objs.get_mes(f,mes,True).show_warning()
+            self.width = 80
         
     def pretty(self):
-        timer = sh.Timer('Parse.pretty') #todo: del
-        timer.start() #todo: del
-        if self._text:
-            text = sh.Text(text=self._text)
+        f = '[Samurai] samurai.Parse.pretty'
+        timer = sh.Timer(f) #TODO: del
+        timer.start()       #TODO: del
+        if self.text:
+            text = sh.Text(text=self.text)
             text.convert_line_breaks()
             text.strip_lines()
             text.tabs2spaces()
             text.replace_x()
             text.delete_duplicate_spaces()
-            self._text = text.text
+            self.text = text.text
             # Allow only 2 consequent line breaks
-            while '\n\n\n' in self._text:
-                self._text = self._text.replace('\n\n\n','\n\n')
+            while '\n\n\n' in self.text:
+                self.text = self.text.replace('\n\n\n','\n\n')
         else:
-            sh.log.append ('Parse.pretty'
-                          ,_('WARNING')
-                          ,_('Empty input is not allowed!')
-                          )
-        timer.end() #todo: del
+            sh.com.rep_empty(f)
+        timer.end() #TODO: del
                           
     def wrap(self):
-        timer = sh.Timer('Parse.wrap') #todo: del
-        timer.start() #todo: del
-        if self._width:
-            lst = list(self._text)
-            count   = 0
-            i       = 0
+        f = '[Samurai] samurai.Parse.wrap'
+        timer = sh.Timer(f) #TODO: del
+        timer.start()       #TODO: del
+        if self.width:
+            lst = list(self.text)
+            count = 0
+            i = 0
             space_i = 0
             while i < len(lst):
                 if lst[i] == ' ':
                     space_i = i
                 if lst[i] == '\n':
                     count = -1
-                if count == self._width:
+                if count == self.width:
                     lst[space_i] = '\n'
-                    self._breaks.append(space_i)
+                    self.breaks.append(space_i)
                     count = i - space_i
                 i += 1
                 count += 1
-            self._text = ''.join(lst)
+            self.text = ''.join(lst)
         else:
-            sh.log.append ('Parse.wrap'
-                          ,_('WARNING')
-                          ,_('Empty input is not allowed!')
-                          )
-        timer.end()  #todo: del
+            sh.com.rep_empty(f)
+        timer.end() #TODO: del
     
     def delete_tags(self):
-        timer = sh.Timer('Parse.delete_tags') #todo: del
-        timer.start() #todo: del
-        if self._text:
+        f = '[Samurai] samurai.Parse.delete_tags'
+        timer = sh.Timer(f) #TODO: del
+        timer.start()       #TODO: del
+        if self.text:
             try:
-                self._text = lxml.html.fromstring(self._text).text_content()
+                self.soup = bs.BeautifulSoup(self.text,'html.parser')
+                for script in self.soup.find_all('script'): #,src=False
+                    script.decompose()
+                self.text = self.soup.get_text()
+                #self.text = lxml.html.fromstring(self.text).text_content()
                 """
                 '''
                 import re
-                self._text = re.sub('<.*?>','',self._text)
+                self.text = re.sub('<.*?>','',self.text)
                 #from xml.etree.ElementTree import ElementTree
-                #self._text = ''.join(xml.etree.ElementTree.fromstring(self._text).itertext())
+                #self.text = ''.join(xml.etree.ElementTree.fromstring(self.text).itertext())
                 '''
-                self.soup = bs.BeautifulSoup(self._text,'html.parser')
-                for script in self.soup.find_all('script'): #,src=False
-                    script.decompose()
-                self._text = self.soup.get_text()
                 """
-                self._text = html.unescape(self._text)
-            except:
-                sh.log.append ('Parse.delete_tags'
-                              ,_('WARNING')
-                              ,_('Failed to parse the page!')
-                              )
+                self.text = html.unescape(self.text)
+            except Exception as e:
+                mes = _('The operation has failed!\n\nDetails: {}')
+                mes = mes.format(e)
+                sh.objs.get_mes(f,mes,True).show_error()
         else:
-            sh.log.append ('Parse.delete_tags'
-                          ,_('WARNING')
-                          ,_('Empty input is not allowed!')
-                          )
-        timer.end() #todo: del
+            sh.com.rep_empty(f)
+        timer.end() #TODO: del
                           
     def add_tabs(self):
-        timer = sh.Timer('Parse.add_tabs') #todo: del
-        timer.start() #todo: del
-        lst = list(self._text)
+        f = '[Samurai] samurai.Parse.add_tabs'
+        timer = sh.Timer(f) #TODO: del
+        timer.start()       #TODO: del
+        lst = list(self.text)
         i = len(lst) - 1
         while i >= 0:
-            if lst[i] == '\n' and not i in self._breaks:
+            if lst[i] == '\n' and not i in self.breaks:
                 if i + 1 < len(lst):
                     # 'isspace' will be 0,16s slower than ' '
                     if lst[i+1] != '\n' and not lst[i+1] == ' ':
-                        lst.insert(i+1,self._tab)
+                        lst.insert(i+1,self.tab)
             i -= 1
-        self._text = ''.join(lst)
-        timer.end() #todo: del
+        self.text = ''.join(lst)
+        timer.end() #TODO: del
 
 
 
 class Browse:
     
     def __init__(self,text):
-        self._text = text
+        self.text = text
         
     def run(self):
-        if self._text:
-            print(self._text)
+        f = '[Samurai] samurai.Browse.run'
+        if self.text:
+            print(self.text)
         else:
-            sh.log.append ('Browse.run'
-                          ,_('WARNING')
-                          ,_('Empty input is not allowed!')
-                          )
+            sh.com.rep_empty(f)
 
 
 if __name__ == '__main__':
-    sh.objs.mes(Silent=True)
+    f = '[Samurai] samurai.__main__'
     if sys.argv and len(sys.argv) > 1:
         timer = sh.Timer()
         timer.start()
@@ -161,7 +149,7 @@ if __name__ == '__main__':
             else:
                 get = sh.Get(url=sys.argv[1])
             get.run()
-            parse = Parse(text=get._html)
+            parse = Parse(text=get.html)
             parse.delete_tags()
         else:
             text = sh.ReadTextFile(file=sys.argv[1]).get()
@@ -170,11 +158,9 @@ if __name__ == '__main__':
         parse.wrap()
         parse.add_tabs()
         timer.end()
-        browse = Browse(text=parse._text)
+        browse = Browse(text=parse.text)
         browse.run()
-    #todo: do not warn when console UI is ready
     else:
-        sh.log.append ('samurai'
-                      ,_('INFO')
-                      ,_('Please provide a URL as a command-line argument!')
-                      )
+        #TODO: do not warn when console UI is ready
+        mes = _('Please provide a URL as a command-line argument!')
+        sh.objs.get_mes(f,mes,True).show_info()

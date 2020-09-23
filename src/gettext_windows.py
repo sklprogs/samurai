@@ -1,1 +1,0 @@
-/home/pete/bin/shared/src/gettext_windows.py
