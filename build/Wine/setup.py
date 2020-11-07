@@ -8,14 +8,14 @@ buildOptions = dict (packages = []
                     )
 
 executables = [Executable ('samurai.py'
-                          ,base       = 'Console'
+                          ,base = 'Console'
                           ,targetName = 'samurai.exe'
                           )
               ]
 
-setup (name        = 'samurai'
-      ,version     = '1'
+setup (name = 'samurai'
+      ,version = '1'
       ,description = 'A minimalistic text-only browser'
-      ,options     = dict(build_exe=buildOptions)
+      ,options = dict(build_exe=buildOptions)
       ,executables = executables
       )

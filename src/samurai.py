@@ -143,7 +143,7 @@ if __name__ == '__main__':
             #url = 'https://youtube.com'
             #url = 'https://en.wikipedia.org/wiki/Bushido'
             if len(sys.argv) > 2:
-                get = sh.Get (url      = sys.argv[1]
+                get = sh.Get (url = sys.argv[1]
                              ,encoding = sys.argv[2]
                              )
             else:
